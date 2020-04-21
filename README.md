@@ -13,3 +13,5 @@
 2. 当从GitHub上拉取代码到IDEA时，可能在Maven界面只有一个父工程模块，没有子工程模块，这时候需要找到对应的子工程模块的pom文件，发现
 它们都变成了普通的xml文件，需要右键手动"add as maven project"。如果运行主启动类报"找不到主类"，需要File->Project Structure->Modules,
 删除右侧的文件即可
+3. 因为最开始的时候，是在父工程pom文件中使用dependencies定义了mybatis的相关依赖，导致所有的子模块默认继承了父工程的所有jar包，而当子模块yml文件没有配置数据源时，就会抛出"Cannot determine embedded database driver class for database type NONE"异常，解决方法是在需要的子模块单独定义，或者使用dependencyManagement标签
+4. 修改与SpringCloud相对应的SpringBoot的版本，减少因版本不一致出现的各种问题
