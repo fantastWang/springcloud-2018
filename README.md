@@ -6,6 +6,10 @@
    > 因为是生产者，需要对外提供服务，那么就需要连接数据库进行操作，所以需要存在yml配置文件，定义了服务的基本信息
    和配置及初始化SQL脚本。编写Dao及xml访问数据库
 
+###遇到的问题，避免下次入坑
 **主启动类的位置要位于最外层，因为springboot启动时，会根据主启动类的位置往里扫描类。不放在最外层，则某些类无法被扫描到
 或者 添加@ComponentScan(basePackages ={ "com.it.wcj"})注解，就不能使用原生的@SpringBootApplication,因为包含了@ComponentScan**
 
+**当从GitHub上拉取代码到IDEA时，可能在Maven界面只有一个父工程模块，没有子工程模块，这时候需要找到对应的子工程模块的pom文件，发现
+它们都变成了普通的xml文件，需要右键手动"add as maven project"。如果运行主启动类报"找不到主类"，需要File->Project Structure->Modules,
+删除右侧的文件即可**
