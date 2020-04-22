@@ -8,7 +8,7 @@ eureka:
     register-with-eureka: false   #false表示不向注册中心注册自己
     fetch-registry: false         #false表示自己端就是注册中心，职责为维护服务，而不需要检索服务
     service-url:
-      # default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/  #设置与eureka服务注册地址(单机版)
-      default-zone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #设置与eureka服务注册地址(单机版)
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
 #  server:
 #    enable-self-preservation: false #关闭Eureka自我保护机制
