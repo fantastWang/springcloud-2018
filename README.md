@@ -5,7 +5,7 @@
 3. 子模块microservicecloud-provider-dept-8001，该工程为**部门微服务生产者8001**，对外提供服务，后面改成了注册进Eureka的一个实例
   > 因为是生产者，需要对外提供服务，那么就需要连接数据库进行操作，所以需要存在yml配置文件，定义了服务的基本信息
    和配置及初始化SQL脚本。编写Dao及xml访问数据库
-4. 子模块microservicecloud-consumer-dept-8001，该工程为**部门微服务消费者8001**，使用RestTemplate进行访问数据
+4. 子模块microservicecloud-consumer-dept-80，该工程为**部门微服务消费者80**，使用RestTemplate进行访问数据
 
 **遇到的问题，避免下次入坑**
 1. 主启动类的位置要位于最外层，因为springboot启动时，会根据主启动类的位置往里扫描类。不放在最外层，则某些类无法被扫描到
