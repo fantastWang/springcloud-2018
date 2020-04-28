@@ -25,4 +25,13 @@ public class ConfigBean {
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
+
+    /**
+     * 不使用默认的轮询算法，改为随机算法
+     * @return
+     */
+//    @Bean
+//    public IRule myRuble(){
+//        return new RandomRule();
+//    }
 }
