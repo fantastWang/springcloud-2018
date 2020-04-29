@@ -1,0 +1,31 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: microservicecloud-zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka      #集群版
+  instance:
+    instance-id: microservicecloud-zuul-gateway-9527  #自定义服务名称信息
+    prefer-ip-address: true
+
+
+#配置信息
+info:
+  app.name: wcjMicroservicecloud
+  company.name: www.wcj.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
+# zuul路由转换，由原本复杂的http://myzuul.com:9527/microservicecloud-provider-dept/dept/get/1
+# 改为 http://myzuul.com:9527/mydept/dept/get/1，但是上面的访问方式也可以支持，可以通过ignored-services解决
+zuul:
+  routes:
+    mydept.serviceId: microservicecloud-provider-dept
+    mydept.path: /mydept/**
+  ignored-services: microservicecloud-provider-dept
+  prefix: /wcj #添加公共前缀 只能通过：http://myzuul.com:9527/wcj/mydept/dept/get/1访问
