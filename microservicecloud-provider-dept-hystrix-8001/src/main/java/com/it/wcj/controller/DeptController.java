@@ -16,6 +16,7 @@ public class DeptController {
 
     /**
      * 如果没有抛出异常，触发了熔断器，则执行指定的方法
+     * 当服务发生故障或异常，当某个异常条件被触发，直接熔断整个服务
      *
      * @param id
      * @return

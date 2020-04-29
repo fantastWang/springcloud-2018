@@ -11,15 +11,15 @@ import java.util.List;
 /**
  * Feign的核心思想就是“接口+注解”的方式，实现负载均衡
  */
-@FeignClient(value = "microservicecloud-provider-dept")
+@FeignClient(value = "microservicecloud-provider-dept", fallbackFactory = DeptClientServiceFallBackFactory.class)
 public interface DeptClientService {
 
-    @RequestMapping(value = "/dept/add",method = RequestMethod.POST)
+    @RequestMapping(value = "/dept/add", method = RequestMethod.POST)
     boolean add(Dept dept);
 
-    @RequestMapping(value = "/dept/get/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
     Dept get(@PathVariable("id") Long id);
 
-    @RequestMapping(value = "/dept/list",method = RequestMethod.GET)
+    @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
     List<Dept> list();
 }
