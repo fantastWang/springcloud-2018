@@ -1,0 +1,6 @@
+
+spring:
+  application:
+    name: microservicecloud-config-eureka-client
+server:
+  port: 7001
