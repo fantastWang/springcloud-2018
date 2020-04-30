@@ -7,11 +7,11 @@
         <artifactId>microservicecloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>microservicecloud-3344</artifactId>
-    <description>微服务分布式配置中心</description>
+    <artifactId>microservicecloud-config-server-3344</artifactId>
+    <description>微服务分布式配置中心-服务端</description>
 
     <dependencies>
-        <!--SpringCloud Config-->
+        <!--SpringCloud Config服务端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
