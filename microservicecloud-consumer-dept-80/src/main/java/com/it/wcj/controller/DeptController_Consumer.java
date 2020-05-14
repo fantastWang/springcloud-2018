@@ -16,6 +16,7 @@ public class DeptController_Consumer {
     //三个服务提供者的应用名配给一致的，这样Ribbon负载均衡的时候就可以负载访问了
     private static final String REST_URL_PREFIX = "http://microservicecloud-provider-dept";
 
+    //这里使用restTemplate，需要在ConfigBean中将RestTemplate初始化，否则无法注入
     @Autowired
     private RestTemplate restTemplate;
 
